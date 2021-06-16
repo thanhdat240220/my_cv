@@ -4,7 +4,7 @@ import Carousel from "~/components/Carousel";
 import Footer from "./partials/Footer";
 import Sidebar from "./partials/Sidebar";
 
-function Home({ children }: { children: Array<React.ReactElement> }) {
+function Home({ children }: { children: React.ReactElement }) {
   return (
     <>
       <div id="page__profile">
@@ -18,10 +18,10 @@ function Home({ children }: { children: Array<React.ReactElement> }) {
             className="offset-3 overflow-x-hidden"
           >
             <Grid container className="page-information">
-              <Grid xs={8} item className="bs">
+              <Grid xs={12} md={12} lg={8} item >
                 {children}
               </Grid>
-              <Grid xs={4} item>
+              <Grid xs={4} item className="col-carousel">
                 <Carousel />
               </Grid>
             </Grid>

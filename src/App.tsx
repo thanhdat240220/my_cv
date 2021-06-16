@@ -22,8 +22,8 @@ const LoginPage = React.lazy(() => import("./pages/Login"));
 function App(): React.ReactElement {
   return (
     <Router>
-      <Switch>
-        <Home>
+      <Home>
+        <Switch>
           <Route path="/information" exact>
             <Suspense fallback={<Spinner />}>
               <InformationPage />
@@ -34,25 +34,13 @@ function App(): React.ReactElement {
               <ExperiencePage />
             </Suspense>
           </Route>
-          {/* <Route path="/login" exact>
-            <Suspense fallback={<Spinner />}>
-              <LoginPage />
-            </Suspense>
-          </Route> */}
-        </Home>
-        <SelectLayout>
-          <Route path="/select" exact>
-            <SelectView />
-          </Route>
-        </SelectLayout>
-        {/* <Home>
-          <Route path="/404">
+          <Route path="/404" exact>
             <PageNotFound />
           </Route>
           <Redirect to="/information" from="/" exact />
           <Redirect to="/404" from="/*" />
-        </Home> */}
-      </Switch>
+        </Switch>
+      </Home>
     </Router>
   );
 }
