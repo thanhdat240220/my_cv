@@ -1,15 +1,15 @@
 import React from "react";
 import Tag from "../@myMaterial/Tag";
-import { IProjectList, IExpandStatus } from "./";
-import { getRandomColor } from "../../untils/untils";
+import { IProject } from "@interface/Model/project";
 import { listTechConfig } from "~/configs/languageDev";
+import { IExpandStatus } from "@interface/Model/common";
 
 function ProjectDetail({
   project,
   expandTable,
   setExpandTable,
 }: {
-  project: IProjectList;
+  project: IProject;
   expandTable: IExpandStatus;
   setExpandTable: React.Dispatch<React.SetStateAction<IExpandStatus>>;
 }) {
@@ -18,7 +18,7 @@ function ProjectDetail({
       variable === null ||
       variable === undefined ||
       variable === "" ||
-      variable === NaN
+      window.isNaN(variable)
     ) {
       return "-";
     } else {

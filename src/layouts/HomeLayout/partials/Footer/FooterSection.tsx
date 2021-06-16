@@ -26,6 +26,7 @@ function FooterSection({
                   className="link__icon"
                   href={item.link ? item.link : "#"}
                   target="_blank"
+                  rel="nofollow"
                 >
                   <span className="icon">{item.icon}</span>
                   <span className="text">{item.children}</span>

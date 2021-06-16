@@ -1,31 +1,9 @@
 import React from "react";
 import ProjectTimeLine from "./ProjectTimeLine";
 import ProjectTable from "./ProjectTable";
-import { listTechDefault } from "~/configs/languageDev";
-
-export interface IExpandStatus {
-  key: number;
-  status: boolean;
-}
-type TDetailProject = {
-  repository?: string;
-  teamSize?: number;
-  listTech?: Array<listTechDefault>;
-  libraries?: Array<{
-    name: string;
-    link?: string;
-  }>;
-};
-export interface IProjectList {
-  key: number;
-  name: string;
-  time: string;
-  desc?: string;
-  linkDemo?: string;
-  detail?: TDetailProject;
-}
 
 function MyExperience() {
+  const params = new window.URLSearchParams(window.location.search);
   return (
     <>
       <div className="page-fluid">
