@@ -1,6 +1,5 @@
 import { IProject } from '@interface/Model/project';
 
-
 export const projectList: Array<IProject> = [
     {
         key: 1,
