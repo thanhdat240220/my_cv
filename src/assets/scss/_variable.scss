@@ -1,0 +1,86 @@
+//flex display
+$list_justify_content: center, space-around, space-between, space-evenly,
+  flex-end, flex-start, start, end;
+
+$list_align_items: center, self-end, self-start, flex-end, flex-start, end,
+  start, baseline;
+
+$list_flex_direction: row, column, row-reverse, column-reverse;
+
+//display
+$list_display: none, unset, flex, inline, block, inline-block, inline-flex,
+  table-cell, table-row, table;
+
+//layout grid
+$grid-mobile-down: 575.98px;
+$grid-mobile-up: 576px;
+$grid-medium: 780px;
+$grid-large: 992px;
+$grid-xlarge: 1200px;
+$grid-widescreen: 1400px;
+$list_view_text: "sm", "md", "lg", "xl";
+$list_break_screen: (
+  "sm": $grid-mobile-up,
+  "md": $grid-medium,
+  "lg": $grid-large,
+  "xl": $grid-xlarge,
+);
+$list_col: (
+  1: 8.333%,
+  2: 16.667%,
+  3: 25%,
+  4: 33.333%,
+  5: 41.667%,
+  6: 50%,
+  7: 58.333%,
+  8: 66.667%,
+  9: 75%,
+  10: 83.333%,
+  11: 91.667%,
+  12: 100%,
+);
+
+//
+$list_status_color: "default", "primary", "success", "warning", "danger";
+$list_color_background: (
+  "default": #fff,
+  "primary": #1976d2,
+  "success": #2e7d32,
+  "warning": #f57f17,
+  "danger": #bf360c,
+);
+$list_color_border: (
+  "default": #000,
+  "primary": #0205b3,
+  "success": #2e7d32,
+  "warning": #c95e00,
+  "danger": #ac2800,
+);
+//color
+$white_color: #fff;
+$border_default: #fff;
+$border_color: #eeeeee;
+$gray_color: #eceff1;
+$color_white_1:#bfbfbf;
+$main_color: #0000000a;
+$black_color: #000;
+$footer_bg_color: #242423;
+$transparent_color: rgba(0, 0, 0, 0);
+$background_list_active: rgb(154 154 154 / 50%);
+$border_color_gradient: linear-gradient(
+  0deg,
+  rgba(53, 76, 75, 0) 0%,
+  #0f56ff 50%,
+  rgba(197, 0, 255, 0) 100%
+);
+
+//font-weight
+$font_weight: 100, 200, 300, 400, 500, 600, 700, 800, 900, "border", "inherit",
+  "unset";
+
+//font-family
+$fontPoppins: "Poppins", Arial, sans-serif;
+$fontMontserrat: "Montserrat", Arial, sans-serif;
+
+//overflow
+$overflow_status_list: hidden, visible, reverse, auto, overlay;

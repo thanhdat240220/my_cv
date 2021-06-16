@@ -1,0 +1,28 @@
+.main-carousel {
+  .carousel-wrapper {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      right: -150px;
+      top: -150px;
+      background: linear-gradient(red, yellow, green);
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .carousel__list {
+      padding: 48px 48px 24px;
+      margin: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      z-index: 11;
+    }
+  }
+}

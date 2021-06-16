@@ -1,0 +1,148 @@
+//list item
+
+@mixin showIconListView() {
+  .slide {
+    width: 100%;
+    .icon-hover {
+      opacity: 1;
+    }
+  }
+}
+// }
+
+.MuiDivider-root {
+  &.divider__vertical {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    width: 1px;
+    height: 100%;
+    background: $border_color_gradient;
+  }
+}
+
+.MuiCollapse-container {
+  &.m-collapse {
+    margin-left: 25px;
+    border-left: 1px solid;
+  }
+}
+
+.MuiGrid-item {
+  @for $col from 1 through 12 {
+    &.offset-#{$col} {
+      margin-left: map-get($list_col, $col);
+    }
+  }
+}
+
+.m-tag {
+  color: $black_color;
+  background-color: $white_color;
+  border: 1px solid $black_color;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0 8px 8px 0;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.m-list {
+  padding: 0;
+  .m-list__item {
+    margin-bottom: 12px;
+    .item__title {
+      margin-right: 5px;
+      font-weight: 600;
+    }
+  }
+}
+
+.card-glassmorphism {
+  height: 300px;
+  width: 230px;
+  transform-style: preserve-3d;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+
+  &:hover {
+    .card__face.face-back {
+      transform: rotateY(360deg);
+    }
+    .card__face.face-front {
+      transform: rotateY(180deg);
+    }
+  }
+  .card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    transition: 1s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .card__face.face-back {
+    transform: rotateY(180deg);
+  }
+
+  .card__face.face-front {
+    .front-container {
+      height: 100%;
+      width: 100%;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .front-content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        .title {
+          color: $white_color;
+          backdrop-filter: blur(100px);
+          padding: 10px 7px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .card__face.face-back{
+    .back-container{
+      padding: 20px 10px;
+    }
+    .btn-more{
+      width: 100%;
+      padding: 12px 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 0;
+      background:rgba(255, 255, 255, 0.4);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      
+      &:hover{
+        background: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+#page-profile__experience {
+  .title__page {
+    margin-bottom: 20px;
+  }
+  .list__project {
+    .list__project-item {
+      .project-item__table {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 12px;
+        text-align: left;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        font-family: "Poppins", Arial, sans-serif;
+
+        thead {
+          tr {
+            color: $white_color;
+            th {
+              background-color: #36304a;
+              font-size: 18px;
+              line-height: 1.2;
+              padding: 15.5px 8px 15.5px 0;
+              &:first-child {
+                padding-left: 35px;
+                border-top-left-radius: 10px;
+              }
+              &:last-child {
+                padding-right: 35px;
+                border-top-right-radius: 10px;
+              }
+            }
+          }
+        }
+        tbody {
+          tr {
+            &:hover {
+              background-color: #f5f5f5;
+            }
+            &:nth-child(4n + 1) {
+              background-color: #f5f5f5;
+            }
+            &:last-child {
+              td {
+                &:first-child {
+                  border-bottom-left-radius: 10px;
+                }
+                &:last-child {
+                  border-bottom-right-radius: 10px;
+                }
+              }
+            }
+
+            td {
+              padding: 19.5px 8px 19.5px 0;
+              border-bottom: 1px solid #eee;
+              font-weight: 500;
+
+              &:first-child {
+                padding-left: 35px;
+              }
+              &:last-child {
+                padding-right: 35px;
+              }
+              &[class*="expand__index"].close {
+                display: none;
+              }
+              &[class*="expand__index"] {
+                transition: all 0.5s;
+
+                .project-detail__list {
+                  padding: 0;
+                  margin: 0;
+
+                  .project-detail__item {
+                    margin-bottom: 14px;
+
+                    .m-tag {
+                      margin-bottom: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .line-time__list {
+    padding: 0;
+    .line-time__item {
+      .line-time__item__accordion {
+        .item__accordion-title {
+          border-bottom: 1px solid #eee;
+          font-weight: 600;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-family: "Poppins", Arial, sans-serif;
+          min-height: 35px;
+
+          .MuiAccordionSummary-content {
+            margin: 10px 0;
+          }
+        }
+        .item__accordion-desc {
+          padding: 15px;
+        }
+      }
+    }
+
+    //responsive line time
+    @media only screen and (max-width: 1100px) {
+      .MuiTimelineItem-root {
+        flex-direction: column;
+        .MuiTimelineSeparator-root,
+        .MuiTimelineOppositeContent-root {
+          margin: auto;
+        }
+      }
+    }
+  }
+}
