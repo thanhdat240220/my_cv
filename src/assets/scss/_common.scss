@@ -141,36 +141,25 @@ td {
   order: 0;
 }
 
-@for $col from 1 through 12 {
-  // .col-#{$col} {
-  //   flex: 0 0 map-get($list_col, $col);
-  //   max-width: map-get($list_col, $col);
-  // }
-  // .order-#{$col} {
-  //   order: $col;
-  // }
-  .offset-#{$col} {
-    margin-left: map-get($list_col, $col);
+@each $view in $list_view_text {
+  @for $col from 1 through 12 {
+    // .col-#{$col} {
+    //   flex: 0 0 map-get($list_col, $col);
+    //   max-width: map-get($list_col, $col);
+    // }
+    // .order-#{$col} {
+    //   order: $col;
+    // }
+    .offset-#{$view}-#{$col} {
+      @media only screen and (min-width: #{map-get($list_break_screen,$view)}) {
+        margin-left: map-get($list_col, $col);
+        &.MuiGrid-item {
+          margin-left: map-get($list_col, $col);
+        }
+      }
+    }
   }
 }
-
-// @each $view_text in $list_view_text {
-//   @media (min-width: map-get($list_break_screen,$view_text)) {
-//     .container {
-//       @if (map-get($list_break_screen, $view_text) < $grid-xlarge) {
-//         max-width: 100%;
-//       } @else {
-//         max-width: 1140px;
-//       }
-//     }
-//     @for $col from 1 through 12 {
-//       .col-#{$view_text}-#{$col} {
-//         flex: 0 0 map-get($list_col, $col);
-//         max-width: map-get($list_col, $col);
-//       }
-//     }
-//   }
-// }
 
 @each $display in $list_display {
   .d-#{$display} {
@@ -257,7 +246,7 @@ td {
   }
 }
 
-.dis-mobile{
+.dis-mobile {
   @media only screen and (min-width: $grid-mobile-up) {
     display: none;
   }

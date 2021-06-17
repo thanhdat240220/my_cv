@@ -14,8 +14,8 @@ function Home({ children }: { children: React.ReactElement }) {
             sm={12}
             md={12}
             lg={12}
+            className="offset-md-3 overflow-x-hidden"
             item
-            className="offset-3 overflow-x-hidden"
           >
             <Grid container className="page-information">
               <Grid xs={12} md={12} lg={8} item >
