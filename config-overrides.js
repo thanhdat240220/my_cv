@@ -11,6 +11,7 @@ module.exports = function override(config, env) {
     alias: {
       ...config.resolve.alias,
       "~": path.resolve("src"),
+      "@configs": path.resolve("src/config"),
     },
   };
   return config;

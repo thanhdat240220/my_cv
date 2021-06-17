@@ -12,33 +12,31 @@ import "./untils/extends";
 import "./assets/scss/index.scss";
 import PageNotFound from "./pages/PageDefault/PageNotFound";
 import Spinner from "./components/@myMaterial/Spinner";
-import SelectLayout from "./layouts/SelectLayout";
-import SelectView from "./components/SelectView";
+import { routes } from './configs/route';
 
 const InformationPage = React.lazy(() => import("./pages/Information"));
 const ExperiencePage = React.lazy(() => import("./pages/Experience"));
-const LoginPage = React.lazy(() => import("./pages/Login"));
 
 function App(): React.ReactElement {
   return (
     <Router>
       <Home>
         <Switch>
-          <Route path="/information" exact>
+          <Route path={routes.information.path} exact>
             <Suspense fallback={<Spinner />}>
               <InformationPage />
             </Suspense>
           </Route>
-          <Route path="/experience" exact>
+          <Route path={routes.experience.path} exact>
             <Suspense fallback={<Spinner />}>
               <ExperiencePage />
             </Suspense>
           </Route>
-          <Route path="/404" exact>
+          <Route path={routes._404.path} exact>
             <PageNotFound />
           </Route>
-          <Redirect to="/information" from="/" exact />
-          <Redirect to="/404" from="/*" />
+          <Redirect to={routes.information.path} from="/" exact />
+          <Redirect to={routes._404.path} from="/*" />
         </Switch>
       </Home>
     </Router>

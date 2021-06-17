@@ -81,11 +81,7 @@ function TimeLine() {
                   {lineTime.title}
                 </AccordionSummary>
                 <AccordionDetails className="item__accordion-desc">
-                  {/* <div
-                    dangerouslySetInnerHTML={{
-                      __html: lineTime?.desc || "",
-                    }}
-                  ></div> */}
+                 
                 </AccordionDetails>
               </Accordion>
             </Paper>

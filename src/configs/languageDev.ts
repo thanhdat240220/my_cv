@@ -1,16 +1,5 @@
-export type listTechDefault =
-  | "javascript"
-  | "java"
-  | "html"
-  | "css"
-  | "c#"
-  | "golang"
-  | "nodejs"
-  | "react"
-  | "typescript"
-  | "Ruby"
-  | "Dart"
-  | "scss/sass";
+import { listTechDefault } from '@interface/Model/common';
+
 export type TLanguageDev = {
   name: listTechDefault;
   link?: string;
