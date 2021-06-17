@@ -62,6 +62,10 @@
         position: relative;
         padding: 6px 0;
         cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-weight: 600;
+        font-family: "Montserrat", Arial, sans-serif;
 
         &.active {
           color: $black_color;

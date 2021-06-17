@@ -12,10 +12,11 @@ import "./untils/extends";
 import "./assets/scss/index.scss";
 import PageNotFound from "./pages/PageDefault/PageNotFound";
 import Spinner from "./components/@myMaterial/Spinner";
-import { routes } from './configs/route';
+import { routes } from "./configs/route";
 
 const InformationPage = React.lazy(() => import("./pages/Information"));
 const ExperiencePage = React.lazy(() => import("./pages/Experience"));
+const OtherPage = React.lazy(() => import("./pages/Other"));
 
 function App(): React.ReactElement {
   return (
@@ -30,6 +31,11 @@ function App(): React.ReactElement {
           <Route path={routes.experience.path} exact>
             <Suspense fallback={<Spinner />}>
               <ExperiencePage />
+            </Suspense>
+          </Route>
+          <Route path={routes.other.path} exact>
+            <Suspense fallback={<Spinner />}>
+              <OtherPage />
             </Suspense>
           </Route>
           <Route path={routes._404.path} exact>

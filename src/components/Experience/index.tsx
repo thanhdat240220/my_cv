@@ -3,7 +3,6 @@ import ProjectTimeLine from "./ProjectTimeLine";
 import ProjectTable from "./ProjectTable";
 
 function MyExperience() {
-  const params = new window.URLSearchParams(window.location.search);
   return (
     <>
       <div className="page-fluid">

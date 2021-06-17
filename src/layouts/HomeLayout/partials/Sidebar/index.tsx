@@ -1,40 +1,21 @@
 import { Grid } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
 import { useHistory } from "react-router-dom";
-// import BackgroundSidebar from "../../../../assets/public/bg-sidebar.jpg";
-
-type TSidebarList = Array<{
-  icon?: React.ReactElement;
-  name: string;
-  href: string;
-}>;
+import BackgroundSidebar from "../../../../assets/public/bg-sidebar.jpg";
+import { sidebarList } from "../../../../configs/sidebar";
+import { updateSidebarState } from "~/stores/action/layoutAction";
+import { GetSidebarStateContext } from "~/stores/context";
 
 function Sidebar() {
-  const BackgroundSidebar =
-    "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80";
-  console.MyConsoleInfo("sidebar-render");
-  const [statusSidebar, setStatusSidebar] = useState<{
-    current: string;
-  }>({
-    current: document.location.pathname,
-  });
+  console.MyConsoleInfo("rendersidebar");
+  const { sidebarState, sidebarUpdateDispatch } = GetSidebarStateContext();
   const history = useHistory();
-  const sidebarList: TSidebarList = [
-    {
-      name: "Information",
-      href: "/information",
-    },
-    {
-      name: "Experience",
-      href: "/experience",
-    },
-    {
-      name: "Other",
-      href: "/other",
-    },
-  ];
 
+  useEffect(() => {
+    const path = window.location.pathname;
+    sidebarUpdateDispatch(updateSidebarState(path));
+  }, []);
   return (
     <>
       <div
@@ -52,20 +33,22 @@ function Sidebar() {
               {sidebarList.map((sidebar) => {
                 return (
                   <li className="sidebar-list__item" key={sidebar.href}>
-                    <a
+                    <button
                       onClick={(e) => {
                         e.preventDefault();
-                        history.push(sidebar.href);
-                        setStatusSidebar({
-                          current: sidebar.href,
-                        });
+                        if (window.location.pathname !== sidebar.href) {
+                          sidebarUpdateDispatch(
+                            updateSidebarState(sidebar.href)
+                          );
+                          history.push(sidebar.href);
+                        }
                       }}
                       className={`sidebar-list__item__link ${
-                        statusSidebar.current === sidebar.href ? "active" : ""
+                        sidebarState.href === sidebar.href ? "active" : ""
                       } font-700`}
                     >
                       {sidebar.name}
-                    </a>
+                    </button>
                   </li>
                 );
               })}
@@ -86,4 +69,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default React.memo(Sidebar);

@@ -2,7 +2,9 @@ import React from "react";
 import Tag from "../@myMaterial/Tag";
 import { IProject } from "@interface/Model/project";
 import { listTechConfig } from "~/configs/languageDev";
-import { IExpandStatus } from "@interface/Model/common";
+import { ISidebarStateInit } from "@interface/State/layoutState";
+import { IActionType } from "@interface/share";
+import { updateExpand } from "~/stores/action/layoutAction";
 
 function ProjectDetail({
   project,
@@ -10,29 +12,21 @@ function ProjectDetail({
   setExpandTable,
 }: {
   project: IProject;
-  expandTable: IExpandStatus;
-  setExpandTable: React.Dispatch<React.SetStateAction<IExpandStatus>>;
+  expandTable: ISidebarStateInit;
+  setExpandTable: React.Dispatch<IActionType>;
 }) {
   const checkNull = (variable: any) => {
-    if (
-      variable === null ||
-      variable === undefined ||
-      variable === "" ||
-      window.isNaN(variable)
-    ) {
+    if (variable === null || variable === undefined || variable === "") {
       return "-";
     } else {
       return variable;
     }
   };
   const checkExpandTable = (key: number) => {
-    return expandTable.key === key && expandTable.status;
+    return expandTable.expandKey === key;
   };
   const handleClickExpand = (key: number) => {
-    setExpandTable({
-      key: key,
-      status: expandTable.key === key ? !expandTable.status : true,
-    });
+    setExpandTable(updateExpand(key));
   };
   const renderTechTags = (tags: Array<string> | undefined) => {
     if (tags)

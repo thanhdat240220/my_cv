@@ -1,22 +1,19 @@
 import { IExpandStatus } from "@interface/Model/common";
 import React, { useState } from "react";
 import ProjectDetail from "./ProjectDetail";
-import { projectList } from '../../configs/projectConfig';
+import { projectList } from "../../configs/projectConfig";
+import { GetSidebarStateContext } from "~/stores/context";
 
 function ProjectTable() {
-  const [expandTable, setExpandTable] = useState<IExpandStatus>({
-    key: -1,
-    status: false,
-  });
-
+  const { sidebarState, sidebarUpdateDispatch } = GetSidebarStateContext();
   const renderTbody = () => {
     return projectList.map((project, index) => {
       return (
         <ProjectDetail
           project={project}
           key={index}
-          expandTable={expandTable}
-          setExpandTable={setExpandTable}
+          expandTable={sidebarState}
+          setExpandTable={sidebarUpdateDispatch}
         />
       );
     });
