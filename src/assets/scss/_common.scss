@@ -72,6 +72,12 @@ td {
   -webkit-border-vertical-spacing: 0;
 }
 
+::selection {
+  background: #1abc9c;
+  color: #fff;
+  text-shadow: none;
+}
+
 @each $weight in $font_weight {
   .font-#{$weight} {
     font-weight: $weight;

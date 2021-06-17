@@ -23,10 +23,16 @@ function ProjectDetail({
     }
   };
   const checkExpandTable = (key: number) => {
-    return expandTable.expandKey === key;
+    return expandTable.expand.expandKey === key && expandTable.expand.status;
   };
   const handleClickExpand = (key: number) => {
-    setExpandTable(updateExpand(key));
+    setExpandTable(
+      updateExpand({
+        status:
+          expandTable.expand.expandKey === key ? !expandTable.expand.status : true,
+        expandKey: key,
+      })
+    );
   };
   const renderTechTags = (tags: Array<string> | undefined) => {
     if (tags)

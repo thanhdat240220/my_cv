@@ -1,3 +1,4 @@
+import { IExpand } from "@interface/State/layoutState";
 import { IActionType } from "../../../@interface/share";
 
 export const UPDATE_SIDEBAR_STATE = "UPDATE_SIDEBAR_STATE";
@@ -13,20 +14,20 @@ export const updateSidebarState = (href: string): IActionType => {
 
 export const updateSidebarAndExpand = (
   href: string,
-  expandKey: number
+  expand: IExpand
 ): IActionType => {
   return {
     type: UPDATE_SIDEBAR_AND_EXPAND,
     payload: {
       href,
-      expandKey,
+      expand,
     },
   };
 };
 
-export const updateExpand = (expandKey: number): IActionType => {
+export const updateExpand = (expand: IExpand): IActionType => {
   return {
     type: UPDATE_EXPAND,
-    payload: expandKey,
+    payload: expand,
   };
 };

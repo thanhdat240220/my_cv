@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Logo from "../Logo";
 import { useHistory } from "react-router-dom";
 import BackgroundSidebar from "../../../../assets/public/bg-sidebar.jpg";
@@ -7,9 +7,8 @@ import { sidebarList } from "../../../../configs/sidebar";
 import { updateSidebarState } from "~/stores/action/layoutAction";
 import { GetSidebarStateContext } from "~/stores/context";
 
-function Sidebar() {
-  console.MyConsoleInfo("rendersidebar");
-  const { sidebarState, sidebarUpdateDispatch } = GetSidebarStateContext();
+function Sidebar({ href }: { href: string }) {
+  const { sidebarUpdateDispatch } = GetSidebarStateContext();
   const history = useHistory();
 
   useEffect(() => {
@@ -44,7 +43,7 @@ function Sidebar() {
                         }
                       }}
                       className={`sidebar-list__item__link ${
-                        sidebarState.href === sidebar.href ? "active" : ""
+                        href === sidebar.href ? "active" : ""
                       } font-700`}
                     >
                       {sidebar.name}

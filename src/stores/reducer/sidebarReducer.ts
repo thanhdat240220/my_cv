@@ -4,7 +4,10 @@ import { IActionType } from "../../../@interface/share";
 
 export const sidebarStateInit: ISidebarStateInit = {
   href: "",
-  expandKey: 0,
+  expand: {
+    expandKey: 0,
+    status: false,
+  },
 };
 
 export const sidebarReducer = (
@@ -22,12 +25,12 @@ export const sidebarReducer = (
       return {
         ...state,
         href: payload.href,
-        expandKey: payload.expandKey,
+        expand: payload.expand,
       };
     case layoutAction.UPDATE_EXPAND:
       return {
         ...state,
-        expandKey: payload.expandKey,
+        expand: payload,
       };
     default:
       return state;

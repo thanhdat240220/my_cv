@@ -1,17 +1,27 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
+import React, { useCallback } from "react";
 import Carousel from "~/components/Carousel";
 import Footer from "./partials/Footer";
 import Sidebar from "./partials/Sidebar";
-import { SidebarStateProvider } from "../../stores/context";
+import {
+  GetSidebarStateContext,
+  SidebarStateProvider,
+} from "../../stores/context";
 
 function Home({ children }: { children: React.ReactElement }) {
+  const { sidebarState } = GetSidebarStateContext();
+  console.log(sidebarState.href);
+  const renderSidebar = useCallback(() => {
+    console.log("renderSidebar");
+    return <Sidebar href={sidebarState.href} />;
+  }, []);
+
   return (
     <>
       <SidebarStateProvider>
         <div id="page__profile">
           <Grid container direction="row">
-            <Sidebar />
+            {renderSidebar()}
             <Grid
               sm={12}
               md={12}

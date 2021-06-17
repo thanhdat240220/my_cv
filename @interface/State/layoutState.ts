@@ -1,4 +1,9 @@
+export type IExpand = {
+  expandKey: number;
+  status: boolean;
+};
+
 export interface ISidebarStateInit {
   href: string;
-  expandKey: number;
+  expand: IExpand;
 }

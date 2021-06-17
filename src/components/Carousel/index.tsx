@@ -11,10 +11,14 @@ function Carousel() {
   const redirectDetail = (key: number) => {
     if (
       sidebarState.href !== routes.experience.path ||
-      sidebarState.expandKey !== key
+      sidebarState.expand.expandKey !== key ||
+      !sidebarState.expand.status
     ) {
       sidebarUpdateDispatch(
-        updateSidebarAndExpand(routes.experience.path, key)
+        updateSidebarAndExpand(routes.experience.path, {
+          expandKey: key,
+          status: true,
+        })
       );
       if (window.location.pathname !== routes.experience.path)
         history.push(routes.experience.path);

@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Home from "~/layouts/HomeLayout";
+import OtherLayout from "~/layouts/OtherLayout";
 //extends
 import "./untils/extends";
 //css
@@ -21,6 +22,15 @@ const OtherPage = React.lazy(() => import("./pages/Other"));
 function App(): React.ReactElement {
   return (
     <Router>
+      <OtherLayout>
+        <Switch>
+          <Route path={routes.other.path + "/personal"} exact>
+            <Suspense fallback={<Spinner />}>
+              <InformationPage />
+            </Suspense>
+          </Route>
+        </Switch>
+      </OtherLayout>
       <Home>
         <Switch>
           <Route path={routes.information.path} exact>
