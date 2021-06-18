@@ -1,0 +1,242 @@
+#personal-theme {
+  .container {
+    padding: 48px;
+    max-width: 1024px;
+  }
+  .wrap-title-section {
+    display: flex;
+    justify-content: center;
+
+    .title-section {
+      font-size: 24px;
+      text-align: center;
+      font-weight: 600;
+      padding: 12px 0 34px;
+      position: relative;
+      display: inline-block;
+      margin: auto;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        bottom: 24px;
+        left: 25%;
+      }
+      &.title-section__black {
+        color: $black_color;
+        &::after {
+          background-color: $black_color;
+        }
+      }
+      &.title-section__white {
+        color: $white_color;
+
+        &::after {
+          background-color: $white_color;
+        }
+      }
+    }
+  }
+
+  .sidebar-wrapper {
+    background-color: $black_color;
+    height: 100vh;
+    width: 60%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transition: 0.5s;
+    transform: translateX(100%);
+    box-shadow: 1px 1px 5px rgb(255 255 255 / 50%);
+
+    &.open {
+      transform: translateX(0);
+    }
+    .container-sidebar {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+
+      .sidebar__list {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        .sidebar__item {
+          a {
+            text-align: center;
+            padding: 8px 10px;
+            color: $white_color;
+            display: block;
+            font-weight: 500;
+            font-family: "Poppins", sans-serif;
+            font-size: 25px;
+            &:hover,
+            .active {
+              font-weight: 600;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn-toggle-sidebar {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    background-color: $black_color;
+    top: calc(#{$height_action_top} + 10px);
+    right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 11;
+    padding: 10px;
+
+    span {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      margin-top: -2px;
+      background-color: $white_color;
+      display: inline-block;
+
+      &::after,
+      &::before {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        background-color: $white_color;
+        transition: 0.3s;
+      }
+      &::after {
+        top: -10px;
+      }
+      &::before {
+        bottom: -10px;
+      }
+    }
+
+    &.active {
+      span {
+        height: 0;
+        &::after {
+          top: -1px;
+          transform: rotate(45deg);
+        }
+        &::before {
+          bottom: -2px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .index-section {
+    margin-bottom: 25px;
+  }
+
+  .section-tutorial {
+    display: flex;
+    .banner-head {
+      width: 40%;
+      img {
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+    .tutorial-wrapper {
+      width: 60%;
+      position: relative;
+      height: calc(100vh - #{$height_action_top});
+
+      .container {
+        padding-left: 72px;
+        padding-right: 144px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .bread-cum {
+        display: inline-block;
+        padding: 5px;
+        background-color: $black_color;
+        color: $white_color;
+        font-weight: bold;
+        font-size: 18px;
+        position: absolute;
+        top: 36px;
+        left: 72px;
+      }
+
+      .content {
+        margin-top: -150px;
+        $blue: #00bcd4;
+
+        .title {
+          line-height: 1.5;
+
+          .font-text-1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: $blue;
+          }
+          .font-text-2 {
+            font-size: 24px;
+            font-family: $fontMontserrat;
+          }
+          .font-text-3 {
+            font-size: 45px;
+            font-weight: 600;
+          }
+        }
+
+        .desc {
+          line-height: 1.5;
+          font-family: $fontMontserrat;
+        }
+
+        .btn-about-me {
+          color: $white_color;
+          background-color: $blue;
+          border-radius: 0px;
+          border: none;
+
+          &:hover {
+            background-color: #1cd0e7;
+          }
+        }
+      }
+
+      .wrapper__social-list {
+        display: inline-block;
+        position: absolute;
+        bottom: 48px;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  .about-me {
+    background-color: $black_color;
+    color: $white_color;
+    .content {
+    }
+  }
+}

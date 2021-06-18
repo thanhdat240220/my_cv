@@ -3,8 +3,12 @@ export interface IActionType {
   payload?: any;
 }
 
-export type TSidebarList = Array<{
+export type IRoute = {
   icon?: React.ReactElement;
-  name: string;
   href: string;
-}>;
+  name?: string;
+};
+
+export interface IRoutes {
+  [name: string]: IRoute;
+}

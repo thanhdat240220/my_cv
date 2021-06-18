@@ -1,62 +1,8 @@
-import React, { Suspense } from "react";
-import {
-  Redirect,
-  Route,
-  Switch,
-  BrowserRouter as Router,
-} from "react-router-dom";
-import Home from "~/layouts/HomeLayout";
-import OtherLayout from "~/layouts/OtherLayout";
-//extends
-import "./untils/extends";
-//css
-import "./assets/scss/index.scss";
-import PageNotFound from "./pages/PageDefault/PageNotFound";
-import Spinner from "./components/@myMaterial/Spinner";
-import { routes } from "./configs/route";
-
-const InformationPage = React.lazy(() => import("./pages/Information"));
-const ExperiencePage = React.lazy(() => import("./pages/Experience"));
-const OtherPage = React.lazy(() => import("./pages/Other"));
+import React from "react";
+import Routers from "./Router";
 
 function App(): React.ReactElement {
-  return (
-    <Router>
-      <OtherLayout>
-        <Switch>
-          <Route path={routes.other.path + "/personal"} exact>
-            <Suspense fallback={<Spinner />}>
-              <InformationPage />
-            </Suspense>
-          </Route>
-        </Switch>
-      </OtherLayout>
-      <Home>
-        <Switch>
-          <Route path={routes.information.path} exact>
-            <Suspense fallback={<Spinner />}>
-              <InformationPage />
-            </Suspense>
-          </Route>
-          <Route path={routes.experience.path} exact>
-            <Suspense fallback={<Spinner />}>
-              <ExperiencePage />
-            </Suspense>
-          </Route>
-          <Route path={routes.other.path} exact>
-            <Suspense fallback={<Spinner />}>
-              <OtherPage />
-            </Suspense>
-          </Route>
-          <Route path={routes._404.path} exact>
-            <PageNotFound />
-          </Route>
-          <Redirect to={routes.information.path} from="/" exact />
-          <Redirect to={routes._404.path} from="/*" />
-        </Switch>
-      </Home>
-    </Router>
-  );
+  return <Routers></Routers>;
 }
 
 export default App;

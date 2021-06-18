@@ -249,3 +249,10 @@
     display: none;
   }
 }
+
+.themes-layout{
+  .theme-action{
+    background-color: #5d5d5d;
+    min-height: $height_action_top;
+  }
+}

@@ -149,10 +149,12 @@ td {
 
 @each $view in $list_view_text {
   @for $col from 1 through 12 {
-    // .col-#{$col} {
-    //   flex: 0 0 map-get($list_col, $col);
-    //   max-width: map-get($list_col, $col);
-    // }
+    .col-#{$col} {
+      flex: 0 0 map-get($list_col, $col);
+      max-width: map-get($list_col, $col);
+      padding-left: 10px;
+      padding-right: 10px;
+    }
     // .order-#{$col} {
     //   order: $col;
     // }

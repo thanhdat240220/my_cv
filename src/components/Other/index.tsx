@@ -1,7 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { routes } from "~/configs/route";
 import BgPersonal from "../../assets/img/theme/background-personal.jpg";
 
 function Other() {
+  const history = useHistory();
+
   return (
     <>
       <ul className="theme-list">
@@ -15,7 +19,15 @@ function Other() {
             <div className="content">
               <h3 className="title">Personal Portfolio</h3>
               <div className="action">
-                <button className="btn btn-view-theme">View</button>
+                <button
+                  className="btn btn-view-theme"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    history.push(routes.personal_theme.path);
+                  }}
+                >
+                  View
+                </button>
               </div>
             </div>
           </div>

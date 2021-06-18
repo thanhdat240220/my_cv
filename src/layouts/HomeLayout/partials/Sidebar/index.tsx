@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Logo from "../Logo";
 import { useHistory } from "react-router-dom";
 import BackgroundSidebar from "../../../../assets/public/bg-sidebar.jpg";
-import { sidebarList } from "../../../../configs/sidebar";
+import { routesSidebar } from "../../../../configs/route";
 import { updateSidebarState } from "~/stores/action/layoutAction";
 import { GetSidebarStateContext } from "~/stores/context";
 
@@ -29,7 +29,7 @@ function Sidebar({ href }: { href: string }) {
           </Grid>
           <Grid xs={12} item>
             <ul className="sidebar-list">
-              {sidebarList.map((sidebar) => {
+              {routesSidebar.map((sidebar) => {
                 return (
                   <li className="sidebar-list__item" key={sidebar.href}>
                     <button
