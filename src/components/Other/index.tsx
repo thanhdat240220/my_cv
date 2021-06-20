@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { routes } from "~/configs/route";
-import BgPersonal from "../../assets/img/theme/background-personal.jpg";
+import BgPersonal from "../../assets/img/theme/personal/bg1.jpg";
 
 function Other() {
   const history = useHistory();

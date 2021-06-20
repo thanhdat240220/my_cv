@@ -18,6 +18,7 @@ function Tag({
       }}
       href={link || "javascript:void(0)"}
       target="_blank"
+      rel="noreferrer"
     >
       {children}
     </a>

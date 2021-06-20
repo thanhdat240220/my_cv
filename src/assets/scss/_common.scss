@@ -169,6 +169,24 @@ td {
   }
 }
 
+@each $view_text in $list_view_text {
+  @media (min-width: map-get($list_break_screen,$view_text)) {
+    .m-container {
+      @if (map-get($list_break_screen, $view_text) < $grid-xlarge) {
+        max-width: 100%;
+      } @else {
+        max-width: 1140px;
+      }
+    }
+    @for $col from 1 through 12 {
+      .col-#{$view_text}-#{$col} {
+        flex: 0 0 map-get($list_col, $col);
+        max-width: map-get($list_col, $col);
+      }
+    }
+  }
+}
+
 @each $display in $list_display {
   .d-#{$display} {
     display: $display !important;

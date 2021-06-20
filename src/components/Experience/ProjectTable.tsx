@@ -1,5 +1,4 @@
-import { IExpandStatus } from "@interface/Model/common";
-import React, { useState } from "react";
+import React from "react";
 import ProjectDetail from "./ProjectDetail";
 import { projectList } from "../../configs/projectConfig";
 import { GetSidebarStateContext } from "~/stores/context";
