@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { updateSidebarAndExpand } from "~/stores/action/layoutAction";
-import { GetSidebarStateContext } from "~/stores/context";
-import { projectList } from "../../configs/projectConfig";
-import { routes } from "../../configs/route";
+import { updateSidebarAndExpand } from "@stores/action/layoutAction";
+import { GetSidebarStateContext } from "@stores/context";
+import { projectList } from "@configs/projectConfig";
+import { routes } from "@configs/route";
 
 function Carousel() {
   const history = useHistory();

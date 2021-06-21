@@ -1,6 +1,6 @@
 import React from "react";
-import PageHead from "~/components/PageHead";
-import ProfileInfo from "../../components/ProfileInfo";
+import PageHead from "@components/PageHead";
+import ProfileInfo from "@components/ProfileInfo";
 
 function InformationPage() {
   return (

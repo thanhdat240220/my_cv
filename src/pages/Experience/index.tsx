@@ -1,6 +1,6 @@
 import React from "react";
-import MyExperience from "~/components/Experience";
-import PageHead from "~/components/PageHead";
+import MyExperience from "@components/Experience";
+import PageHead from "@components/PageHead";
 
 function ExperiencePage() {
   return (

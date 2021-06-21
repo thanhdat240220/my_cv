@@ -10,10 +10,10 @@ import OtherLayout from "~/layouts/OtherLayout";
 //extends
 import "./untils/extends";
 //css
-import "./assets/scss/index.scss";
+import "@assets/scss/index.scss";
 import PageNotFound from "./pages/PageDefault/PageNotFound";
-import Spinner from "./components/@myMaterial/Spinner";
-import { mainRoute, routes } from "./configs/route";
+import Spinner from "@components/@myMaterial/Spinner";
+import { mainRoute, routes } from "@configs/route";
 //my-profile
 const InformationPage = React.lazy(() => import("./pages/Information"));
 const ExperiencePage = React.lazy(() => import("./pages/Experience"));

@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectDetail from "./ProjectDetail";
-import { projectList } from "../../configs/projectConfig";
-import { GetSidebarStateContext } from "~/stores/context";
+import { projectList } from "@configs/projectConfig";
+import { GetSidebarStateContext } from "@stores/context";
 
 function ProjectTable() {
   const { sidebarState, sidebarUpdateDispatch } = GetSidebarStateContext();

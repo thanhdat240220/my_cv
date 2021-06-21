@@ -4,7 +4,7 @@ import { IProject } from "@interface/Model/project";
 import { listTechConfig } from "~/configs/languageDev";
 import { ISidebarStateInit } from "@interface/State/layoutState";
 import { IActionType } from "@interface/share";
-import { updateExpand } from "~/stores/action/layoutAction";
+import { updateExpand } from "@stores/action/layoutAction";
 
 function ProjectDetail({
   project,

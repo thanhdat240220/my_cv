@@ -2,10 +2,10 @@ import { Grid } from "@material-ui/core";
 import React, { useEffect } from "react";
 import Logo from "../Logo";
 import { useHistory } from "react-router-dom";
-import BackgroundSidebar from "../../../../assets/public/bg-sidebar.jpg";
-import { routesSidebar } from "../../../../configs/route";
-import { updateSidebarState } from "~/stores/action/layoutAction";
-import { GetSidebarStateContext } from "~/stores/context";
+import BackgroundSidebar from "@assets/public/bg-sidebar.jpg";
+import { routesSidebar } from "@configs/route";
+import { updateSidebarState } from "@stores/action/layoutAction";
+import { GetSidebarStateContext } from "@stores/context";
 
 function Sidebar({ href }: { href: string }) {
   const { sidebarUpdateDispatch } = GetSidebarStateContext();

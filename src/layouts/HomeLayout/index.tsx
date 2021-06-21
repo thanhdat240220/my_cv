@@ -1,12 +1,12 @@
 import { Grid } from "@material-ui/core";
 import React, { useCallback } from "react";
-import Carousel from "~/components/Carousel";
+import Carousel from "@components/Carousel";
 import Footer from "./partials/Footer";
 import Sidebar from "./partials/Sidebar";
 import {
   GetSidebarStateContext,
   SidebarStateProvider,
-} from "../../stores/context";
+} from "@stores/context";
 
 function Home({ children }: { children: React.ReactElement }) {
   const { sidebarState } = GetSidebarStateContext();

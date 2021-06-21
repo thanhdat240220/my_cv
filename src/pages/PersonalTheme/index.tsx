@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import BannerHead from "../../assets/img/theme/personal/bg.jpg";
-import BannerAboutMe from "../../assets/img/theme/personal/bg1.jpg";
-import Service1 from "../../assets/img/theme/personal/icon1.png";
-import Service2 from "../../assets/img/theme/personal/icon2.png";
-import Service3 from "../../assets/img/theme/personal/icon3.png";
-import Service4 from "../../assets/img/theme/personal/icon4.png";
-import Service5 from "../../assets/img/theme/personal/icon5.png";
-import Service6 from "../../assets/img/theme/personal/icon6.png";
-import Project1 from "../../assets/img/theme/personal/img1.jpg";
-import Project2 from "../../assets/img/theme/personal/img2.jpg";
-import Project3 from "../../assets/img/theme/personal/img3.jpg";
-import Project4 from "../../assets/img/theme/personal/img4.jpg";
-import Project5 from "../../assets/img/theme/personal/img5.jpg";
-import Project6 from "../../assets/img/theme/personal/img6.jpg";
-import Project7 from "../../assets/img/theme/personal/img7.jpg";
-import Project8 from "../../assets/img/theme/personal/img8.jpg";
-
-
+import BannerHead from "@assets/img/theme/personal/bg.jpg";
+import BannerAboutMe from "@assets/img/theme/personal/bg1.jpg";
+import Service1 from "@assets/img/theme/personal/icon1.png";
+import Service2 from "@assets/img/theme/personal/icon2.png";
+import Service3 from "@assets/img/theme/personal/icon3.png";
+import Service4 from "@assets/img/theme/personal/icon4.png";
+import Service5 from "@assets/img/theme/personal/icon5.png";
+import Service6 from "@assets/img/theme/personal/icon6.png";
+import Project1 from "@assets/img/theme/personal/img1.jpg";
+import Project2 from "@assets/img/theme/personal/img2.jpg";
+import Project3 from "@assets/img/theme/personal/img3.jpg";
+import Project4 from "@assets/img/theme/personal/img4.jpg";
+import Project5 from "@assets/img/theme/personal/img5.jpg";
+import Project6 from "@assets/img/theme/personal/img6.jpg";
+import Project7 from "@assets/img/theme/personal/img7.jpg";
+import Project8 from "@assets/img/theme/personal/img8.jpg";
 
 function PersonalTheme() {
   const [statePage, setStatePage] = useState({
     isToggle: false,
-    activeIndex: "home"
+    activeIndex: "home",
   });
 
   const listSidebar = [
@@ -29,40 +27,46 @@ function PersonalTheme() {
     { id: "about_me", text: "About Me" },
     { id: "our_service", text: "Our Service" },
     { id: "recent_work", text: "Recent Work" },
-    { id: "contact_us", text: "Contact Us" }
+    { id: "contact_us", text: "Contact Us" },
   ];
 
   const renderSidebar = () => {
     return listSidebar.map((sidebar, index) => {
       return (
         <li className="sidebar__item" key={index}>
-          <a href={sidebar.id}
-            className={`${statePage.activeIndex === sidebar.id ? "active" : ""}`}
+          <a
+            href={sidebar.id}
+            className={`${
+              statePage.activeIndex === sidebar.id ? "active" : ""
+            }`}
             onClick={(e) => {
               e.preventDefault();
               if (statePage.activeIndex !== sidebar.id) {
                 let scrollDiv = document.getElementById(sidebar.id)?.offsetTop;
-                window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+                window.scrollTo({ top: scrollDiv, behavior: "smooth" });
                 setStatePage({
                   ...statePage,
                   isToggle: false,
-                  activeIndex: sidebar.id
-                })
+                  activeIndex: sidebar.id,
+                });
               }
             }}
-          >{sidebar.text}</a>
+          >
+            {sidebar.text}
+          </a>
         </li>
       );
     });
-  }
+  };
 
   return (
     <>
       <div id="personal-theme">
         <div className="personal-theme__container">
           <div
-            className={`btn-toggle-sidebar ${statePage.isToggle ? "active" : ""
-              }`}
+            className={`btn-toggle-sidebar ${
+              statePage.isToggle ? "active" : ""
+            }`}
             onClick={(e) => {
               e.preventDefault();
               setStatePage({
@@ -77,9 +81,7 @@ function PersonalTheme() {
             className={`sidebar-wrapper ${statePage.isToggle ? "open" : ""}`}
           >
             <div className="container-sidebar">
-              <ul className="sidebar__list">
-                {renderSidebar()}
-              </ul>
+              <ul className="sidebar__list">{renderSidebar()}</ul>
             </div>
           </div>
           <section className="section-tutorial" id="home">
@@ -178,9 +180,11 @@ function PersonalTheme() {
                     </div>
                     <div className="service-content">
                       <h3 className="service-name">Web Design</h3>
-                      <p className="service-desc">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        standard dummy text ever</p>
+                      <p className="service-desc">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the standard
+                        dummy text ever
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -191,9 +195,11 @@ function PersonalTheme() {
                     </div>
                     <div className="service-content">
                       <h3 className="service-name">Web Design</h3>
-                      <p className="service-desc">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's Lorem Lorem Lorem
-                        standard dummy text ever</p>
+                      <p className="service-desc">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's Lorem Lorem Lorem standard dummy text ever
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -204,9 +210,11 @@ function PersonalTheme() {
                     </div>
                     <div className="service-content">
                       <h3 className="service-name">Web Design</h3>
-                      <p className="service-desc">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem simply Ipsum has been the industry's Lorem
-                        standard dummy text ever</p>
+                      <p className="service-desc">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem simply Ipsum has been the
+                        industry's Lorem standard dummy text ever
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -217,9 +225,11 @@ function PersonalTheme() {
                     </div>
                     <div className="service-content">
                       <h3 className="service-name">Web Design</h3>
-                      <p className="service-desc">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's simply simply
-                        standard dummy text ever</p>
+                      <p className="service-desc">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's simply simply standard dummy text ever
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -230,9 +240,11 @@ function PersonalTheme() {
                     </div>
                     <div className="service-content">
                       <h3 className="service-name">Web Design</h3>
-                      <p className="service-desc">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's simply
-                        standard dummy text ever</p>
+                      <p className="service-desc">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's simply standard dummy text ever
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -243,9 +255,11 @@ function PersonalTheme() {
                     </div>
                     <div className="service-content">
                       <h3 className="service-name">Web Design</h3>
-                      <p className="service-desc">Lorem Ipsum is simply simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever</p>
+                      <p className="service-desc">
+                        Lorem Ipsum is simply simply dummy text of the printing
+                        and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -331,27 +345,46 @@ function PersonalTheme() {
               <div className="row contact-form">
                 <div className="col-md-6 col-sm-12">
                   <div className="form-control">
-                    <input className="form-control__input" type="text" placeholder="First Name" />
+                    <input
+                      className="form-control__input"
+                      type="text"
+                      placeholder="First Name"
+                    />
                   </div>
                 </div>
                 <div className="col-md-6 col-sm-12">
                   <div className="form-control">
-                    <input className="form-control__input" type="text" placeholder="Last Name" />
+                    <input
+                      className="form-control__input"
+                      type="text"
+                      placeholder="Last Name"
+                    />
                   </div>
                 </div>
                 <div className="col-md-6 col-sm-12">
                   <div className="form-control">
-                    <input className="form-control__input" type="email" placeholder="Email" />
+                    <input
+                      className="form-control__input"
+                      type="email"
+                      placeholder="Email"
+                    />
                   </div>
                 </div>
                 <div className="col-md-6 col-sm-12">
                   <div className="form-control">
-                    <input className="form-control__input" type="text" placeholder="Mobile No." />
+                    <input
+                      className="form-control__input"
+                      type="text"
+                      placeholder="Mobile No."
+                    />
                   </div>
                 </div>
                 <div className="col-sm-12">
                   <div className="form-control">
-                    <textarea placeholder="Message" className="form-control_textarea"></textarea>
+                    <textarea
+                      placeholder="Message"
+                      className="form-control_textarea"
+                    ></textarea>
                   </div>
                 </div>
                 <div className="col-sm-12">
@@ -367,8 +400,8 @@ function PersonalTheme() {
               <p>Copyright @2021 Tran Thanh Dat theme. All Right Reserved</p>
             </div>
           </section>
-        </div >
-      </div >
+        </div>
+      </div>
     </>
   );
 }

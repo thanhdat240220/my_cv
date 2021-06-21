@@ -1,5 +1,5 @@
 import React from "react";
-import Other from "../../components/Other/index";
+import Other from "@components/Other/index";
 
 function OtherPage() {
   return (
