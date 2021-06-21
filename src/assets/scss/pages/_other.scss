@@ -53,6 +53,7 @@
           .btn-view-theme {
             background-color: $white_color;
             border: none;
+            filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.425));
 
             &:hover {
               background-color: rgb(235, 235, 235);

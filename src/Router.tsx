@@ -19,7 +19,8 @@ const InformationPage = React.lazy(() => import("./pages/Information"));
 const ExperiencePage = React.lazy(() => import("./pages/Experience"));
 const OtherPage = React.lazy(() => import("./pages/Other"));
 //my-theme
-const PersonalTheme = React.lazy(() => import("./pages/PersonalTheme"));
+const PersonalTheme = React.lazy(() => import("./pages/_PersonalTheme"));
+const AdminTheme = React.lazy(() => import("./pages/_AdminTheme"));
 
 function Routers(): React.ReactElement {
   return (
@@ -60,6 +61,11 @@ function Routers(): React.ReactElement {
               <Route path={routes.personal_theme.path} exact>
                 <Suspense fallback={<Spinner />}>
                   <PersonalTheme />
+                </Suspense>
+              </Route>
+              <Route path={routes.admin_theme.path} exact>
+                <Suspense fallback={<Spinner />}>
+                  <AdminTheme />
                 </Suspense>
               </Route>
               <Redirect

@@ -20,7 +20,10 @@ export const routes = {
     path: `${mainRoute.myProfile.href}/my-themes`,
   },
   personal_theme: {
-    path: `${mainRoute.theme.href}/personal`,
+    path: `${mainRoute.theme.href}/personal-theme`,
+  },
+  admin_theme: {
+    path: `${mainRoute.theme.href}/admin-theme`,
   },
   _404: {
     path: `${mainRoute.myProfile.href}/404`,
