@@ -1,0 +1,19 @@
+#login-page{
+    height: 100%;
+    .login-form-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+
+        .login-form-wrapper{
+            padding: 40px;
+            width: 100%;
+
+            .login-form{
+                margin-top: -200px;
+            }
+        }
+    }
+}
