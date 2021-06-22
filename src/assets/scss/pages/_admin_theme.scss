@@ -9,6 +9,7 @@
     width: 280px;
     font-family: $frontRoboto;
     color: $color_sidebar_link;
+    transition: 0.3s;
 
     .sidebar-head {
       height: 60px;
@@ -172,8 +173,27 @@
       }
     }
 
-    &.mini-sidebar{
-        
+    &.mini-sidebar {
+      width: 60px;
+      .sidebar-head {
+      }
+      .sidebar-gr-name {
+        opacity: 0;
+        margin: 0;
+      }
+      .sidebar-body {
+        padding: 10px;
+
+        .wrapper-btn-toggle {
+          .btn-toggle-gr-dropdown {
+            padding-right: 0;
+            .name-text,
+            .icon-bf {
+              opacity: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
