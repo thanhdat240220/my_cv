@@ -322,7 +322,15 @@ function AdminTheme() {
             </div>
           </div>
         </section>
-        <section id="content-page"></section>
+        <section id="content-page">
+          <section className="head-content">
+            <div className="page-name">Analytics</div>
+            <div className="breadcrumb">
+              <span className="">Home</span>
+              <span className="">Analytics</span>
+            </div>
+          </section>
+        </section>
         <div
           className={`bg-layout-mb ${
             sidebarState.mobileLayout.sidebarOpen ? "active" : ""

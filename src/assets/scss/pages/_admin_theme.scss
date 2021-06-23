@@ -316,8 +316,7 @@
   }
   #content-page {
     width: 100%;
-    min-height: 100vh;
-    padding-left: 280px;
+    padding: 60px 0 0 280px;
     background-color: $bg-content-page;
     transition: 0.5s ease;
   }
@@ -429,6 +428,19 @@
         border-radius: 40px;
         transition: 0.26s ease;
         box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.12);
+
+        .header-right
+          .personal-actions
+          .personal-actions__container
+          .personal-actions__header {
+          .info {
+            display: none;
+          }
+          .avatar,
+          .icon-dropdown {
+            margin-right: 0;
+          }
+        }
       }
 
       &.mobile-open {
@@ -440,6 +452,39 @@
     }
     #content-page {
       padding-left: 0;
+    }
+
+    @media only screen and (max-width: $grid-mobile-down) {
+      #header-page {
+        .header-container {
+          .header-container-mobile {
+            padding: 0 24px;
+          }
+          .header-container-desktop {
+            margin: 12px 24px 0;
+            .header-right {
+              .fast-actions,
+              .personal-actions,
+              .more-actions {
+                padding: 8px 12px;
+              }
+              .fast-actions .fast-action__list > li .fast-action__item {
+                height: 40px;
+                width: 40px;
+                padding: 10px;
+              }
+              .personal-actions
+                .personal-actions__container
+                .personal-actions__header {
+                .avatar {
+                  height: 40px;
+                  width: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -481,6 +526,7 @@
     transform: translateY(12px) scaleY(0);
     transform-origin: top;
     transition: 0.26s ease;
+    border-radius: 5px;
 
     .dropdown-item {
       text-align: center;
@@ -490,6 +536,14 @@
       font-weight: 500;
       color: $color_sidebar_link;
 
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
       &:hover {
         color: $primary_color;
         background-color: $bg-sidebar_link-hover;
